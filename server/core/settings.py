@@ -86,7 +86,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",  # Librería para PostgreSQL
-        "NAME": "todolist_db",  # Nombre de la base de datos PostgreSQL
+        "NAME": "todos_db",  # Nombre de la base de datos PostgreSQL
         "USER": "postgres",  # Usuario de la base de datos PostgreSQL
         "PASSWORD": "admin",  # Contraseña de usuario PostgreSQL
         "HOST": "localhost",  # Ubicación de la base de datos
