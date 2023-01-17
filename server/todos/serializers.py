@@ -24,7 +24,7 @@ class TodoSerializer(ModelSerializer):
             "id": instance.pk,
             "title": instance.title,
             "description": instance.description,
-            "is_complete": instance.is_completed,
+            "is_completed": instance.is_completed,
             "is_deleted": instance.is_deleted,
             "todo_list": instance.todo_list.pk,
             "created_at": instance.created_at.strftime("%D %H:%S"),

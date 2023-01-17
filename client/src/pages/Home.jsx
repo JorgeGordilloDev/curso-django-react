@@ -33,10 +33,11 @@ const Home = () => {
       headers,
       method: "POST",
     });
+
     if (response.ok) {
-      getTodoList();
       setError(null);
       setAddTodo({});
+      getTodoList();
     } else {
       const data = await response.json();
       setError(data);
@@ -49,7 +50,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="container mt-4">
+      <div className="container mt-3">
         {error && (
           <div className="alert alert-danger fade show" role="alert">
             {error.error}
@@ -57,36 +58,28 @@ const Home = () => {
         )}
         <form onSubmit={postTodoList}>
           <div className="row">
-            <div className="col-5">
+            <div className="col">
               <input
-                type="text"
                 name="name"
                 value={addTodo.name ?? ""}
                 onChange={onChange}
-                className="form-control"
+                className="form-control mb-2"
                 placeholder="Nombre"
               />
-            </div>
-            <div className="col-6">
               <input
-                type="text"
                 name="description"
                 value={addTodo.description ?? ""}
                 onChange={onChange}
-                className="form-control"
+                className="form-control mb-2"
                 placeholder="Descripción"
               />
-            </div>
-            <div className="col-1">
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-sm btn-primary" type="submit">
                 Agregar
               </button>
             </div>
           </div>
         </form>
-      </div>
-      <div className="container mt-4">
-        <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3">
+        <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3 mt-1">
           {todoList?.map((todo) => (
             <Todo key={todo.id} todo={todo} />
           ))}
