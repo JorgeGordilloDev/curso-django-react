@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "corsheaders",
     "drf_yasg",
     "todos",
 ]
@@ -86,7 +87,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",  # Librería para PostgreSQL
-        "NAME": "todos_db",  # Nombre de la base de datos PostgreSQL
+        "NAME": "todolist_db2",  # Nombre de la base de datos PostgreSQL
         "USER": "postgres",  # Usuario de la base de datos PostgreSQL
         "PASSWORD": "admin",  # Contraseña de usuario PostgreSQL
         "HOST": "localhost",  # Ubicación de la base de datos
@@ -137,10 +138,6 @@ MEDIA_URL = "media/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "static/"
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    # '/var/www/static/',
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
